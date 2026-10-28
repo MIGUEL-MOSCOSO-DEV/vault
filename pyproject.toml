@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vault-backup"
+version = "1.0.0"
+description = "Encrypted, versioned folder backups with safe restoration and an in-app scheduler."
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "Miguel Moscoso", email = "miguelmoscoso.devperu@gmail.com"}]
+dependencies = ["cryptography==50.0.2"]
+
+[project.scripts]
+vault = "vault.app:main"
+
+[project.urls]
+Repository = "https://github.com/MIGUEL-MOSCOSO-DEV/vault"
+Issues = "https://github.com/MIGUEL-MOSCOSO-DEV/vault/issues"
+
+[tool.setuptools.packages.find]
+include = ["vault*"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
